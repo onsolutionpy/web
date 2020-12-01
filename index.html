@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ON SOLUTION</title>
+<meta name="author" content="Miguel Rodriguez">
+<meta name="generator" content="WYSIWYG Web Builder 15 - http://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="logo.png" rel="icon" sizes="700x700" type="image/png">
+<link href="logo.png" rel="icon" sizes="700x700" type="image/png">
+<link href="logo.png" rel="icon" sizes="700x700" type="image/png">
+<link href="css/base/jquery-ui.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/mr.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="skrollr.min.js"></script>
+<script src="wb.panel.min.js"></script>
+<script src="wwb15.min.js"></script>
+<script>   
+   $(document).ready(function()
+   {
+      $('#reviewsImage1').addClass('visibility-hidden');
+      $('#portfolio-image2').addClass('visibility-hidden');
+      $("a[href*='#header']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutQuad');
+      });
+      $("a[href*='#intro']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_intro').offset().top-68 }, 600, 'easeOutCirc');
+      });
+      $("a[href*='#skills']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_skills').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      $("a[href*='#services']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_services').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      function onScrollservices()
+      {
+         var $obj = $("#wb_services");
+         if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+         {
+            $obj.addClass("in-viewport");
+            AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+            AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+         }
+      }
+      onScrollservices();
+      $(window).scroll(function(event)
+      {
+         onScrollservices();
+      });
+      $("a[href*='#skillsInner']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_skillsInner').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      function skrollrInit()
+      {
+         skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+      }
+      skrollrInit();
+      $("a[href*='#servicesLayoutGrid1']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_servicesLayoutGrid1').offset().top-68 }, 600, 'easeOutCirc');
+      });
+      $("a[href*='#facts']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_facts').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      $("#skillsProgressbar1").progressbar(
+      {
+         value: 100,
+         change: function() 
+         {
+            $("#skillsProgressbar1-label").text($(this).progressbar('value') + '%');
+         }
+      });
+      $("#skillsProgressbar2").progressbar(
+      {
+         value: 100,
+         change: function() 
+         {
+            $("#skillsProgressbar2-label").text($(this).progressbar('value') + '%');
+         }
+      });
+      $("#skillsProgressbar3").progressbar(
+      {
+         value: 100,
+         change: function() 
+         {
+            $("#skillsProgressbar3-label").text($(this).progressbar('value') + '%');
+         }
+      });
+      $("#skillsProgressbar4").progressbar(
+      {
+         value: 100,
+         change: function() 
+         {
+            $("#skillsProgressbar4-label").text($(this).progressbar('value') + '%');
+         }
+      });
+   function countUpfactsJavaScript1()
+   {
+      var $obj = $('#factsJavaScript1');
+      var count = $obj.attr('data-count');
+      var bottomObj = $obj.offset().top + $obj.outerHeight();
+      var bottomWnd = $(window).scrollTop() + $(window).height();
+      if (bottomWnd > bottomObj && count != 0)
+      {
+         $({countUp: $obj.text()}).animate({countUp: count},
+         {
+            duration: 4000,
+            step: function() { $obj.text(Math.floor(this.countUp)); },
+            complete: function() { $obj.text(this.countUp); $obj.attr('data-count', 0); }
+         });  
+      }
+   }
+   $(window).scroll( function()
+   {
+      countUpfactsJavaScript1();
+   });
+   countUpfactsJavaScript1();
+   function countUpfactsJavaScript2()
+   {
+      var $obj = $('#factsJavaScript2');
+      var count = $obj.attr('data-count');
+      var bottomObj = $obj.offset().top + $obj.outerHeight();
+      var bottomWnd = $(window).scrollTop() + $(window).height();
+      if (bottomWnd > bottomObj && count != 0)
+      {
+         $({countUp: $obj.text()}).animate({countUp: count},
+         {
+            duration: 4000,
+            step: function() { $obj.text(Math.floor(this.countUp)); },
+            complete: function() { $obj.text(this.countUp); $obj.attr('data-count', 0); }
+         });  
+      }
+   }
+   $(window).scroll( function()
+   {
+      countUpfactsJavaScript2();
+   });
+   countUpfactsJavaScript2();
+   function countUpfactsJavaScript3()
+   {
+      var $obj = $('#factsJavaScript3');
+      var count = $obj.attr('data-count');
+      var bottomObj = $obj.offset().top + $obj.outerHeight();
+      var bottomWnd = $(window).scrollTop() + $(window).height();
+      if (bottomWnd > bottomObj && count != 0)
+      {
+         $({countUp: $obj.text()}).animate({countUp: count},
+         {
+            duration: 4000,
+            step: function() { $obj.text(Math.floor(this.countUp)); },
+            complete: function() { $obj.text(this.countUp); $obj.attr('data-count', 0); }
+         });  
+      }
+   }
+   $(window).scroll( function()
+   {
+      countUpfactsJavaScript3();
+   });
+   countUpfactsJavaScript3();
+      $("a[href*='#contact']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contact').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      $("a[href*='#contactForm']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contactForm').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      $("#PanelMenu1").panel({animate: true, animationDuration: 200, animationEasing: 'linear', dismissible: true, display: 'push', position: 'top', toggle: true});
+      $("#PanelMenu1_markup ul li a").click(function(event)
+      {
+          $.panel.hide($("#PanelMenu1_panel"));
+      });
+      var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+      if (iOS)
+      {
+         $('#wb_intro,#wb_facts').css('background-attachment', 'scroll');
+      }
+      $(window).on('resize', function()
+      {
+         ResponsiveVideo('intro-video');
+      });
+      ResponsiveVideo('intro-video');
+   });
+</script>
+<script>   
+   $(document).ready(function()
+   {
+      var $progressbars = $('.ui-progressbar');
+      
+      $progressbars.each(function() 
+      {
+        var $obj = $(this);
+        $obj.data('value', $obj.progressbar('option', 'value'));
+        $obj.data('done', false);
+        $obj.progressbar('option', 'value', 0);
+      });
+      $(window).bind('scroll', function() 
+      {
+         $progressbars.each(function() 
+         {
+            var $obj = $(this);
+            if (!$obj.data('done') && $(window).scrollTop() + $(window).height() >= $obj.offset().top) 
+            {
+               $obj.data('done', true);
+               $obj.animate({scroll: 1}, 
+               { 
+                  duration: 3000, 
+                  step: function(now) 
+                  {
+                     var $obj = $(this);
+                     var val = Math.round($obj.data('value') * now);
+                     $obj.progressbar('option', 'value', val);
+                  }
+               });
+            }
+         });
+      }).triggerHandler('scroll');
+   });
+</script>
+</head>
+<body>
+   <div id="wb_header">
+      <div id="header">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Image1">
+                  <a href="#intro"><img src="images/logo.png" id="Image1" alt=""></a>
+               </div>
+            </div>
+            <div class="col-2">
+               <div id="wb_aboutMeMenu">
+                  <ul role="menubar">
+                     <li class="firstmain"><a role="menuitem" href="#intro" target="_self">INICIO</a>
+                     </li>
+                     <li><a role="menuitem" href="#skills" target="_self">ACERCA&nbsp;DE</a>
+                     </li>
+                     <li><a role="menuitem" href="#services" target="_self">SERVICIOS</a>
+                     </li>
+                     <li><a role="menuitem" href="#contact" target="_self">CONTACTO</a>
+                     </li>
+                  </ul>
+               </div>
+               <div id="wb_PanelMenu1">
+                  <a href="#PanelMenu1_markup" id="PanelMenu1">
+                     <span class="line"></span>
+                     <span class="line"></span>
+                     <span class="line"></span>
+                  </a>
+                  <div id="PanelMenu1_markup">
+                     <ul role="menu">
+                        <li role="menuitem"><a href="#intro">INICIO</a></li>
+                        <li role="menuitem"><a href="#skills">ACERCA DE</a></li>
+                        <li role="menuitem"><a href="#services">SERVICIOS</a></li>
+                        <li role="menuitem"><a href="#contact">CONTACTO</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_intro">
+      <div id="intro-video"><video src="https://media.giphy.com/media/3o7WTQcjUp6JnP7s52/giphy.mp4" autoplay loop muted playsinline=""></video>
+      </div>
+      <div id="intro">
+         <div class="col-1">
+            <div id="wb_Image2">
+               <img src="images/inic.png" id="Image2" alt="">
+            </div>
+            <div id="wb_Text1">
+               <span style="color:#FFFFFF;font-family:Arial;font-size:64px;">SOLUTION</span>
+            </div>
+            <div id="wb_Text2">
+               <span style="color:#FFFFFF;font-family:Arial;font-size:21px;">Soluciones informáticas a tu alcance</span>
+            </div>
+            <div id="wb_down-arrow">
+               <a href="#skills"><div id="down-arrow"><i class="fa fa-angle-double-down"></i></div></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_skills">
+      <div id="skills">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_skillsInner">
+                     <div id="skillsInner">
+                        <div class="row">
+                           <div class="col-1">
+                              <div class="col-1-padding">
+                                 <div id="wb_skillsHeading">
+                                    <p style="margin:6.67px 0px 6.67px 0px;font-size:16px;line-height:18px;font-weight:bold;color:#4E4E4E;"><span style="font-size:24px;line-height:27.5px;color:#4E4E4E;">V</span><span style="font-size:24px;line-height:27.5px;color:#4E4E4E;">alores</span></p>
+                                 </div>
+                                 <label for="" id="skillsLabel1">Creatividad</label>
+                                 <div id="skillsProgressbar1">
+                                    <div id="skillsProgressbar1-label">100%</div>
+                                 </div>
+                                 <label for="" id="skillsLabel2">Proactividad</label>
+                                 <div id="skillsProgressbar2">
+                                    <div id="skillsProgressbar2-label">100%</div>
+                                 </div>
+                                 <label for="" id="skillsLabel3">Responsabilidad</label>
+                                 <div id="skillsProgressbar3">
+                                    <div id="skillsProgressbar3-label">100%</div>
+                                 </div>
+                                 <label for="" id="skillsLabel4">Compromiso</label>
+                                 <div id="skillsProgressbar4">
+                                    <div id="skillsProgressbar4-label">100%</div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="col-2-padding">
+                                 <div id="wb_skillsText">
+                                    <p style="margin:6.67px 0px 6.67px 0px;font-size:24px;line-height:27.5px;font-weight:bold;color:#4E4E4E;"><span style="color:#4E4E4E;">ACERCA DE</span></p>
+                                    <p style="font-size:16px;line-height:18px;color:#4E4E4E;line-height:21.6px;"><span style="color:#4E4E4E;">ON SOLUTION nace con el propósito de ayudar a las empresas a optimizar el uso de sus recursos, a través de la implantación soluciones informáticas.</span><span style="font-size:16px;line-height:18px;color:#4E4E4E;"><br/></span><span style="font-size:16px;line-height:18px;color:#4E4E4E;"><br/></span><span style="color:#4E4E4E;">Nuestra política consiste en lograr la mayor satisfacción de nuestros clientes, brindando los mejores servicios en soluciones informáticas y tecnológicas, dentro de los</span><span style="color:#4E4E4E;">&nbsp;</span><span style="color:#4E4E4E;">parámetros legales aplicables, orientado hacia la mejora contínua.</span></p>
+                                    <p style="font-size:16px;line-height:18px;font-weight:bold;line-height:21.6px;">&nbsp;</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_services">
+      <div id="services">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_servicesHeading">
+                     <h1 id="servicesHeading">SERVICIOS</h1>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="upStickyLayer">
+      <div id="upStickyLayer_Container">
+         <div id="wb_up-arrow">
+            <a href="https://wa.me/595981454256" target="_blank"><div id="up-arrow"><i class="fa fa-whatsapp"></i></div></a></div>
+      </div>
+   </div>
+   <div id="wb_servicesLayoutGrid1">
+      <div id="servicesLayoutGrid1">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_servicesCard1" data-100-bottom="opacity:0.0;" data--500-bottom="opacity:1.0;">
+                     <div id="servicesCard1-card-body">
+                        <div id="servicesCard1-card-item0"><i class="fa fa-code"></i></div>
+                        <div id="servicesCard1-card-item1">DESARROLLO DE SOFTWARE</div>
+                        <div id="servicesCard1-card-item2">Análisis y desarrollo de softwares multiplataformas que integra y automatiza todas las operaciones asociadas a la administración de su empresa.</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_servicesCard2" data-100-bottom="opacity:0.0;" data--500-bottom="opacity:1.0;">
+                     <div id="servicesCard2-card-body">
+                        <div id="servicesCard2-card-item0"><i class="fa fa-globe"></i></div>
+                        <div id="servicesCard2-card-item1">DISEÑO WEB</div>
+                        <div id="servicesCard2-card-item2">Hacemos webs adaptadas a las exigencias actuales del mercado. Diseño web con programación a medida.                             </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="col-3-padding">
+                  <div id="wb_servicesCard3" data-100-bottom="opacity:0.0;" data--500-bottom="opacity:1.0;">
+                     <div id="servicesCard3-card-body">
+                        <div id="servicesCard3-card-item0"><i class="fa fa-paint-brush"></i></div>
+                        <div id="servicesCard3-card-item1">DISEÑO GRÁFICO</div>
+                        <div id="servicesCard3-card-item2">Diseño editorial, publicitario e identidad corporativa. Diseño gráfico personalizado: logotipos, banners, flyers y mucho más.               </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_facts">
+      <div id="facts-overlay"></div>
+      <div id="facts">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_factsIcon1">
+                     <a href="#"><div id="factsIcon1"><i class="fa fa-users"></i></div></a>
+                  </div>
+                  <div id="wb_factsJavaScript1">
+                     <div data-count="32" id="factsJavaScript1"></div>
+                  </div>
+                  <div id="wb_factsHeading1">
+                     <h2 id="factsHeading1">+ Clientes</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_factsIcon2">
+                     <a href="#"><div id="factsIcon2"><i class="fa fa-briefcase"></i></div></a>
+                  </div>
+                  <div id="wb_factsJavaScript2">
+                     <div data-count="28" id="factsJavaScript2"></div>
+                  </div>
+                  <div id="wb_factsHeading2">
+                     <h2 id="factsHeading2">+ Proyectos</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="col-3-padding">
+                  <div id="wb_factsIcon3">
+                     <a href="#"><div id="factsIcon3"><i class="fa fa-certificate"></i></div></a>
+                  </div>
+                  <div id="wb_factsJavaScript3">
+                     <div data-count="16" id="factsJavaScript3"></div>
+                  </div>
+                  <div id="wb_factsHeading3">
+                     <h2 id="factsHeading3">+ Certificaciones</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contact">
+      <div id="contact-overlay"></div>
+      <div id="contact">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_contactForm">
+                     <form name="contactForm" method="get" action="mailto:orleugim@gmail.com" enctype="text/plain" id="contactForm">
+                        <div class="row">
+                           <div class="col-1">
+                              <div class="col-1-padding">
+                                 <div id="wb_contactText1">
+                                    <p style="font-size:24px;line-height:27.5px;font-weight:bold;color:#4E4E4E;"><span style="color:#4E4E4E;">CONTÁCTANOS</span></p>
+                                    <p style="font-size:24px;line-height:27.5px;font-weight:bold;color:#4E4E4E;"><span style="font-size:17px;line-height:20px;font-weight:normal;color:#4E4E4E;">Tu consulta no molesta</span></p>
+                                 </div>
+                                 <div id="wb_Breadcrumb1">
+                                    <ul id="Breadcrumb1">
+                                       <li><a href="tel:+595981454256"><i class="fa fa-phone">&nbsp;</i>+595 981 454 256</a></li>
+                                    </ul>
+                                 </div>
+                                 <div id="wb_Breadcrumb4">
+                                    <ul id="Breadcrumb4">
+                                       <li><a href="tel:+59548210765"><i class="fa fa-phone">&nbsp;</i>+595 48 210 765</a></li>
+                                    </ul>
+                                 </div>
+                                 <div id="wb_Breadcrumb2">
+                                    <ul id="Breadcrumb2">
+                                       <li><a href="mailto:sigcepy@gmail.com"><i class="fa fa-envelope-o">&nbsp;</i>onsolutionpy@gmail.com</a></li>
+                                    </ul>
+                                 </div>
+                                 <div id="wb_Breadcrumb3">
+                                    <ul id="Breadcrumb3">
+                                       <li><a href="https://goo.gl/maps/xyqCpU1B1p2ak4819" target="_blank"><i class="fa fa-map-marker">&nbsp;</i>Curuguaty, Canindey&#250;, Paraguay</a></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="col-2-padding">
+                                 <div id="wb_contactText2">
+                                    <p style="margin:6.67px 0px 6.67px 0px;font-size:16px;line-height:18px;color:#4E4E4E;"><span style="color:#4E4E4E;">Si aún no eres cliente, te queremos dar razones para que empieces a serlo.</span><span style="font-size:16px;line-height:18px;color:#4E4E4E;"><br/></span></p>
+                                    <p style="font-size:16px;line-height:18px;line-height:21.6px;">&nbsp;</p>
+                                    <p style="font-size:16px;line-height:18px;font-weight:bold;color:#4E4E4E;line-height:21.6px;"><span style="color:#4E4E4E;">Seguinos en</span><span style="color:#4E4E4E;">:</span></p>
+                                 </div>
+                                 <div id="wb_contactIcon1">
+                                    <a href="https://www.facebook.com/orleugim" target="_blank"><div id="contactIcon1"><i class="fa fa-facebook"></i></div></a>
+                                 </div>
+                                 <div id="wb_contactIcon3">
+                                    <a href="https://www.instagram.com/miguel_rodmarti/" target="_blank"><div id="contactIcon3"><i class="fa fa-instagram"></i></div></a>
+                                 </div>
+                                 <div id="wb_contactIcon4">
+                                    <a href="https://www.youtube.com/channel/UCwkYMV0r1_LxOGnJuy2bkkQ/featured" target="_blank"><div id="contactIcon4"><i class="fa fa-youtube"></i></div></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_footer">
+      <div id="footer">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_contactText3">
+                  <p style="color:#FFFFFF;"><span style="color:#FFFFFF;">ON SOLUTION</span><span style="color:#FFFFFF;"> ©</span><span style="color:#FFFFFF;"> 2021</span><span style="color:#FFFFFF;">. Todos los derechos reservados</span></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
